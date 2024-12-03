@@ -6036,6 +6036,7 @@ alter table user_roles add constraint FK55itppkw3i07do3h7qoclqd4k foreign key (u
 2024-12-03 11:09:03 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
 2024-12-03 11:09:03 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
 2024-12-03 11:09:03 [restartedMain] INFO  com.secureshop.SecureshopApplication - Started SecureshopApplication in 3.785 seconds (JVM running for 4.752)
+<<<<<<< HEAD
 2024-12-03 11:15:57 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-12-03 11:15:57 [SpringApplicationShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
 2024-12-03 11:15:57 [SpringApplicationShutdownHook] ERROR o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000478: Unsuccessful: drop table if exists user CASCADE 
@@ -6043,3 +6044,5 @@ alter table user_roles add constraint FK55itppkw3i07do3h7qoclqd4k foreign key (u
 Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
 2024-12-03 11:15:57 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2024-12-03 11:15:57 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+=======
+>>>>>>> SEC-1-configuration-de-l-environnement
