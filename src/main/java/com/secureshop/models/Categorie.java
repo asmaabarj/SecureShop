@@ -21,6 +21,8 @@ public class Categorie {
 
     @NotBlank(message = "Le nom ne peut pas être vide")
     private String nom;
+
+    @NotBlank(message = "La description est obligatoire")
     private String description;
 
     @OneToMany(mappedBy = "categorie")
