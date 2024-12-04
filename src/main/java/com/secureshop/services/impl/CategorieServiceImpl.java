@@ -1,10 +1,13 @@
 package com.secureshop.services.impl;
 
 import com.secureshop.dtos.CategorieDTO;
+import com.secureshop.dtos.ProduitDTO;
 import com.secureshop.exceptions.CategorieException;
 import com.secureshop.mappers.CategorieMapper;
+import com.secureshop.mappers.ProduitMapper;
 import com.secureshop.models.Categorie;
 import com.secureshop.repositories.CategorieRepository;
+import com.secureshop.repositories.ProduitRepository;
 import com.secureshop.services.interfaces.CategorieService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,6 +24,8 @@ public class CategorieServiceImpl implements CategorieService {
 
     private final CategorieRepository categorieRepository;
     private final CategorieMapper categorieMapper;
+    private final ProduitRepository produitRepository;
+    private final ProduitMapper produitMapper;
 
     @Override
     public Page<CategorieDTO> listCategories(Pageable pageable) {
@@ -38,9 +43,8 @@ public class CategorieServiceImpl implements CategorieService {
     }
 
     @Override
-    public Page<CategorieDTO> searchCategoriesByName(String name, Pageable pageable) {
-        log.info("Searching categories by name: {}", name);
-        return categorieRepository.findAll(pageable)
+    public Page<CategorieDTO> searchCategoriesByNom(String nom, Pageable pageable) {
+        return categorieRepository.findByNomContainingIgnoreCase(nom, pageable)
                 .map(categorieMapper::categorieToCategorieDTO);
     }
 
@@ -80,5 +84,11 @@ public class CategorieServiceImpl implements CategorieService {
         Categorie categorie = categorieRepository.findById(id)
                 .orElseThrow(() -> new CategorieException("Categorie introuvable avec l'ID: " + id));
         categorieRepository.delete(categorie);
+    }
+
+    @Override
+    public Page<ProduitDTO> getProduitsForCategorie(Long categorieId, Pageable pageable) {
+        return produitRepository.findByCategorieId(categorieId, pageable)
+                .map(produitMapper::produitToProduitDTO);
     }
 }

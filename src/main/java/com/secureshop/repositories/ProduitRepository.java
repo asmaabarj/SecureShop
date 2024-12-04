@@ -1,13 +1,21 @@
 package com.secureshop.repositories;
 
-import com.secureshop.models.Produit;
+import java.util.List;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
+import com.secureshop.models.Produit;
 
 @Repository
 public interface ProduitRepository extends JpaRepository<Produit, Long> {
-    Optional<Produit> findByDesignation(String designation);
+    Page<Produit> findByDesignationContainingIgnoreCase(String designation, Pageable pageable);
     boolean existsByDesignation(String designation);
+    List<Produit> findByCategorieId(Long categorieId);
+    @Query("SELECT p FROM Produit p WHERE p.categorie.id = :categorieId")
+    Page<Produit> findByCategorieId(Long categorieId, Pageable pageable);
 }
+
