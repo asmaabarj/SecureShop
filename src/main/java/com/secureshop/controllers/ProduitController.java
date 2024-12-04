@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/produits")
@@ -28,11 +29,10 @@ public class ProduitController {
         return ResponseEntity.ok(produitService.searchProduitsByDesignation(designation, pageable));
     }
 
+
     @GetMapping("/categorie/{categorieId}")
-    public ResponseEntity<Page<ProduitDTO>> getProduitsByCategorie(
-            @PathVariable Long categorieId,
-            Pageable pageable) {
-        return ResponseEntity.ok(produitService.filterProduitsByCategorie(categorieId, pageable));
+    public ResponseEntity<List<ProduitDTO>> getProduitsByCategorie(@PathVariable Long categorieId) {
+        return ResponseEntity.ok(produitService.getProduitsByCategorie(categorieId));
     }
 
     @PostMapping
@@ -56,5 +56,12 @@ public class ProduitController {
     @GetMapping("/{id}")
     public ResponseEntity<ProduitDTO> getProduitById(@PathVariable Long id) {
         return ResponseEntity.ok(produitService.findProduitById(id));
+    }
+
+    @GetMapping("/filter/categorie/{categorieId}")
+    public ResponseEntity<Page<ProduitDTO>> filterProduitsByCategorie(
+            @PathVariable Long categorieId,
+            Pageable pageable) {
+        return ResponseEntity.ok(produitService.filterProduitsByCategorie(categorieId, pageable));
     }
 }

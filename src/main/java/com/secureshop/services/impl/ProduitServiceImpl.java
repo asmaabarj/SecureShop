@@ -1,5 +1,14 @@
 package com.secureshop.services.impl;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+import com.secureshop.exceptions.CategorieException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.secureshop.dtos.ProduitDTO;
 import com.secureshop.exceptions.ProduitException;
 import com.secureshop.mappers.ProduitMapper;
@@ -7,12 +16,9 @@ import com.secureshop.models.Produit;
 import com.secureshop.repositories.CategorieRepository;
 import com.secureshop.repositories.ProduitRepository;
 import com.secureshop.services.interfaces.ProduitService;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Slf4j
@@ -41,15 +47,19 @@ public class ProduitServiceImpl implements ProduitService {
 
     @Override
     public Page<ProduitDTO> searchProduitsByDesignation(String designation, Pageable pageable) {
-        log.info("Searching products by designation: {}", designation);
-        return produitRepository.findAll(pageable)
+        if (!produitRepository.existsByDesignation(designation)) {
+            throw new CategorieException(" il n'existe aucun produit avec designation : " + designation);
+        }else {
+        return produitRepository.findByDesignationContainingIgnoreCase(designation, pageable)
                 .map(produitMapper::produitToProduitDTO);
-    }
+    }}
 
     @Override
     public Page<ProduitDTO> filterProduitsByCategorie(Long categorieId, Pageable pageable) {
-        log.info("Filtering products by category ID: {}", categorieId);
-        return produitRepository.findAll(pageable)
+        if (!categorieRepository.existsById(categorieId)) {
+            throw new CategorieException("Catégorie non trouvée avec l'ID : " + categorieId);
+        }
+        return produitRepository.findByCategorieId(categorieId, pageable)
                 .map(produitMapper::produitToProduitDTO);
     }
 
@@ -95,4 +105,15 @@ public class ProduitServiceImpl implements ProduitService {
                 .orElseThrow(() -> new ProduitException("Produit introuvable avec l'ID: " + id));
         produitRepository.delete(produit);
     }
+
+    @Override
+    public List<ProduitDTO> getProduitsByCategorie(Long categorieId) {
+        if (!categorieRepository.existsById(categorieId)) {
+            throw new CategorieException("Catégorie non trouvée avec l'ID : " + categorieId);
+        }else {
+        return produitRepository.findByCategorieId(categorieId)
+                .stream()
+                .map(produitMapper::produitToProduitDTO)
+                .collect(Collectors.toList());
+    }}
 }
