@@ -130,19 +130,19 @@ mvn spring-boot:run
 ```
 ## 📚 **Usage**
 ### ⚙️ ** Endpoints Utiles **
- ##### Produits :  
+##### Produits :  
 - Lister : GET /api/user/products?page=1&size=10
 - Ajouter (ADMIN) : POST /api/admin/products
 ##### Catégories :
 - Lister : GET /api/user/categories
 - Supprimer (ADMIN) : DELETE /api/admin/categories/{id}
-  ##### Authentification :
+##### Authentification :
 - Login : POST /api/auth/login
 - Enregistrement : POST /api/auth/register
 
 ## 🛡️ **Tests**
 1. Exécuter les tests unitaires :
-   ```bash
+```bash
 mvn test
 ```
 2. Exécuter les tests de sécurité :
