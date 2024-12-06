@@ -11,5 +11,6 @@ public interface UserService  {
     List<UserDTO> listUsers();
     void updateUserRoles(Long userId, List<String> roleNames);
     UserDTO authenticate(String login, String password);
+    boolean existsByLogin(String login);
     
 }

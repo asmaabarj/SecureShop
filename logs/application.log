@@ -1,0 +1,160 @@
+2024-12-06 16:08:05 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2024-12-06 16:08:05 [restartedMain] INFO  com.secureshop.SecureshopApplication - Starting SecureshopApplication using Java 1.8.0_432 on LAPTOP-ICGVSVEA with PID 2320 (C:\Users\ycode\eclipse-workspace\secureshop\target\classes started by ycode in C:\Users\ycode\eclipse-workspace\secureshop)
+2024-12-06 16:08:05 [restartedMain] INFO  com.secureshop.SecureshopApplication - The following 1 profile is active: "prod"
+2024-12-06 16:08:05 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-06 16:08:05 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-06 16:08:06 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-06 16:08:06 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50 ms. Found 4 JPA repository interfaces.
+2024-12-06 16:08:06 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-12-06 16:08:06 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-06 16:08:06 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-06 16:08:06 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2024-12-06 16:08:06 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-06 16:08:06 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1505 ms
+2024-12-06 16:08:06 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-06 16:08:07 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-06 16:08:07 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mariadb://localhost:3307/secure_shop?user=root&password=***'
+2024-12-06 16:08:07 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-06 16:08:07 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2024-12-06 16:08:07 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-12-06 16:08:07 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MariaDB103Dialect
+2024-12-06 16:08:07 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-12-06 16:08:07 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-06 16:08:08 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-06 16:08:08 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/api/auth/**']
+2024-12-06 16:08:08 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/h2-console/**']
+2024-12-06 16:08:08 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasRole('ROLE_ADMIN')] for Ant [pattern='/api/admin/**']
+2024-12-06 16:08:08 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyAuthority('ROLE_USER','ROLE_ADMIN')] for Ant [pattern='/api/user/**']
+2024-12-06 16:08:08 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+2024-12-06 16:08:08 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3220d97c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@657d0f7b, org.springframework.security.web.context.SecurityContextPersistenceFilter@1583b17c, org.springframework.security.web.header.HeaderWriterFilter@5a0c1ccb, org.springframework.web.filter.CorsFilter@52ab669c, org.springframework.security.web.authentication.logout.LogoutFilter@336c1b11, org.springframework.security.web.session.ConcurrentSessionFilter@7bf882a5, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@fd165d3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@38c083de, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2870d8d9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@9b2db6a, org.springframework.security.web.session.SessionManagementFilter@40fcab97, org.springframework.security.web.access.ExceptionTranslationFilter@13110ea9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@68c028cc]
+2024-12-06 16:08:08 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-12-06 16:08:08 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-06 16:08:08 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-12-06 16:08:08 [restartedMain] INFO  com.secureshop.SecureshopApplication - Started SecureshopApplication in 3.804 seconds (JVM running for 4.712)
+2024-12-06 16:08:24 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-06 16:08:24 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-06 16:08:24 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-12-06 16:08:24 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/register
+2024-12-06 16:08:24 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sanaa, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_admin]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_admin]]]
+2024-12-06 16:08:24 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sanaa, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_admin]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_admin]]]
+2024-12-06 16:08:24 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [POST /api/auth/register] with attributes [permitAll]
+2024-12-06 16:08:24 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/register
+2024-12-06 16:08:25 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+2024-12-06 16:08:35 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/logout
+2024-12-06 16:08:35 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sanaa, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_admin]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_admin]]]
+2024-12-06 16:08:35 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sanaa, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_admin]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_admin]]]
+2024-12-06 16:08:35 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [POST /api/auth/logout] with attributes [permitAll]
+2024-12-06 16:08:35 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/logout
+2024-12-06 16:08:35 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Did not store empty SecurityContext
+2024-12-06 16:08:35 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Did not store empty SecurityContext
+2024-12-06 16:08:35 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+2024-12-06 16:08:40 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/register
+2024-12-06 16:08:40 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+2024-12-06 16:08:40 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-06 16:08:40 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [POST /api/auth/register] with attributes [permitAll]
+2024-12-06 16:08:40 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/register
+2024-12-06 16:08:40 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as col_0_0_ from users user0_ where user0_.login=? limit ?
+2024-12-06 16:08:40 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [nouvelutilisateur]
+2024-12-06 16:08:40 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as col_0_0_ from users user0_ where user0_.login=? limit ?
+2024-12-06 16:08:40 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [nouvelutilisateur]
+2024-12-06 16:08:40 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select role0_.id as id1_2_, role0_.name as name2_2_ from roles role0_ where role0_.name=?
+2024-12-06 16:08:40 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [USER]
+2024-12-06 16:08:40 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - insert into users (active, login, password) values (?, ?, ?)
+2024-12-06 16:08:40 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BOOLEAN] - [true]
+2024-12-06 16:08:40 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [nouvelutilisateur]
+2024-12-06 16:08:40 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [$2a$10$0V2FoOlK8pxES6/JF0JiXOcUVuMkOhvvYHX2t3MQRQryt0zTpTvLG]
+2024-12-06 16:08:41 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - insert into user_roles (user_id, role_id) values (?, ?)
+2024-12-06 16:08:41 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [11]
+2024-12-06 16:08:41 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [2]
+2024-12-06 16:08:41 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=nouvelutilisateur, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@320bf372]
+2024-12-06 16:08:41 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=nouvelutilisateur, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@320bf372]
+2024-12-06 16:08:41 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+2024-12-06 16:08:49 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/register
+2024-12-06 16:08:49 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=nouvelutilisateur, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]]
+2024-12-06 16:08:49 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=nouvelutilisateur, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]]
+2024-12-06 16:08:49 [http-nio-8080-exec-7] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2024-12-06 16:08:49 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Re-authenticated UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=nouvelutilisateur, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_user]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_user]] before authorizing
+2024-12-06 16:08:49 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [POST /api/auth/register] with attributes [permitAll]
+2024-12-06 16:08:49 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/register
+2024-12-06 16:08:49 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=nouvelutilisateur, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_user]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_user]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@320bf372]
+2024-12-06 16:08:49 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=nouvelutilisateur, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_user]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_user]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@320bf372]
+2024-12-06 16:08:49 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+2024-12-06 16:08:54 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/logout
+2024-12-06 16:08:54 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=nouvelutilisateur, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_user]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_user]]]
+2024-12-06 16:08:54 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=nouvelutilisateur, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_user]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_user]]]
+2024-12-06 16:08:54 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [POST /api/auth/logout] with attributes [permitAll]
+2024-12-06 16:08:54 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/logout
+2024-12-06 16:08:54 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Did not store empty SecurityContext
+2024-12-06 16:08:54 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Did not store empty SecurityContext
+2024-12-06 16:08:54 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+2024-12-06 16:09:00 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/register
+2024-12-06 16:09:00 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+2024-12-06 16:09:00 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-06 16:09:00 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [POST /api/auth/register] with attributes [permitAll]
+2024-12-06 16:09:00 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/register
+2024-12-06 16:09:00 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select user0_.id as col_0_0_ from users user0_ where user0_.login=? limit ?
+2024-12-06 16:09:00 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [nouvelutilisateur]
+2024-12-06 16:09:00 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Did not store anonymous SecurityContext
+2024-12-06 16:09:01 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Did not store anonymous SecurityContext
+2024-12-06 16:09:01 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+2024-12-06 16:09:19 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2024-12-06 16:09:19 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to empty SecurityContext
+2024-12-06 16:09:19 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-06 16:09:19 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [POST /api/auth/login] with attributes [permitAll]
+2024-12-06 16:09:19 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2024-12-06 16:09:19 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select user0_.id as id1_4_, user0_.active as active2_4_, user0_.login as login3_4_, user0_.password as password4_4_ from users user0_ where user0_.login=?
+2024-12-06 16:09:19 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [nouvelutilisateur]
+2024-12-06 16:09:19 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select roles0_.user_id as user_id1_3_0_, roles0_.role_id as role_id2_3_0_, role1_.id as id1_2_1_, role1_.name as name2_2_1_ from user_roles roles0_ inner join roles role1_ on roles0_.role_id=role1_.id where roles0_.user_id=?
+2024-12-06 16:09:19 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [11]
+2024-12-06 16:09:19 [http-nio-8080-exec-4] INFO  c.s.c.a.AuthController - Login successful for user: nouvelutilisateur
+2024-12-06 16:09:19 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=nouvelutilisateur, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@320bf372]
+2024-12-06 16:09:19 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=nouvelutilisateur, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@320bf372]
+2024-12-06 16:09:19 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+2024-12-06 16:09:24 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2024-12-06 16:09:24 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=nouvelutilisateur, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]]
+2024-12-06 16:09:24 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=nouvelutilisateur, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]]
+2024-12-06 16:09:24 [http-nio-8080-exec-1] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2024-12-06 16:09:24 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Re-authenticated UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=nouvelutilisateur, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_user]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_user]] before authorizing
+2024-12-06 16:09:24 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.i.FilterSecurityInterceptor - Authorized filter invocation [POST /api/auth/login] with attributes [permitAll]
+2024-12-06 16:09:24 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2024-12-06 16:09:24 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=nouvelutilisateur, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_user]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_user]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@320bf372]
+2024-12-06 16:09:24 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=nouvelutilisateur, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_user]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_user]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@320bf372]
+2024-12-06 16:09:24 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - Cleared SecurityContextHolder to complete request
+2024-12-06 16:09:38 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-12-06 16:09:38 [Thread-13] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2024-12-06 16:09:38 [Thread-13] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-12-06 16:09:38 [Thread-13] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2024-12-06 16:09:38 [Thread-13] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-12-06 16:09:38 [Thread-13] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+2024-12-06 16:09:38 [Thread-13] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-06 16:09:38 [Thread-13] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-06 16:09:38 [Thread-13] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-06 16:09:38 [restartedMain] INFO  com.secureshop.SecureshopApplication - Starting SecureshopApplication using Java 1.8.0_432 on LAPTOP-ICGVSVEA with PID 2320 (C:\Users\ycode\eclipse-workspace\secureshop\target\classes started by ycode in C:\Users\ycode\eclipse-workspace\secureshop)
+2024-12-06 16:09:38 [restartedMain] INFO  com.secureshop.SecureshopApplication - The following 1 profile is active: "prod"
+2024-12-06 16:09:39 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-06 16:09:39 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 4 JPA repository interfaces.
+2024-12-06 16:09:39 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-12-06 16:09:39 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-06 16:09:39 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-06 16:09:39 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2024-12-06 16:09:39 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-06 16:09:39 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 450 ms
+2024-12-06 16:09:39 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2024-12-06 16:09:39 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2024-12-06 16:09:39 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mariadb://localhost:3307/secure_shop?user=root&password=***'
+2024-12-06 16:09:39 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-06 16:09:39 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MariaDB103Dialect
+2024-12-06 16:09:39 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-12-06 16:09:39 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-06 16:09:39 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-06 16:09:39 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/api/auth/**']
+2024-12-06 16:09:39 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [permitAll] for Ant [pattern='/h2-console/**']
+2024-12-06 16:09:39 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasRole('ROLE_ADMIN')] for Ant [pattern='/api/admin/**']
+2024-12-06 16:09:39 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [hasAnyAuthority('ROLE_USER','ROLE_ADMIN')] for Ant [pattern='/api/user/**']
+2024-12-06 16:09:39 [restartedMain] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression [authenticated] for any request
+2024-12-06 16:09:39 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1c19999, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@48d2757b, org.springframework.security.web.context.SecurityContextPersistenceFilter@73ea763f, org.springframework.security.web.header.HeaderWriterFilter@55ff737c, org.springframework.web.filter.CorsFilter@31115ff9, org.springframework.security.web.authentication.logout.LogoutFilter@51034024, org.springframework.security.web.session.ConcurrentSessionFilter@2ebc357a, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5b47f902, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5da08fad, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3e206ee1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@55fa2f30, org.springframework.security.web.session.SessionManagementFilter@7ec81f1, org.springframework.security.web.access.ExceptionTranslationFilter@50a1a54f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@49b61181]
+2024-12-06 16:09:39 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-12-06 16:09:39 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-06 16:09:39 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-12-06 16:09:39 [restartedMain] INFO  com.secureshop.SecureshopApplication - Started SecureshopApplication in 0.949 seconds (JVM running for 95.581)
+2024-12-06 16:09:39 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged

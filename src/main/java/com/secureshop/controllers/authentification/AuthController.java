@@ -3,7 +3,6 @@ package com.secureshop.controllers.authentification;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
@@ -32,7 +31,7 @@ public class AuthController {
     private final UserService userService;
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody UserDTO request, HttpServletRequest session) {
+    public ResponseEntity<?> login(@RequestBody UserDTO request) {
         Authentication existingAuth = SecurityContextHolder.getContext().getAuthentication();
         if (existingAuth != null && existingAuth.isAuthenticated() &&
                 !(existingAuth instanceof AnonymousAuthenticationToken)) {
@@ -42,23 +41,24 @@ public class AuthController {
         }
         
         try {
-            UsernamePasswordAuthenticationToken authenticationToken = 
-                new UsernamePasswordAuthenticationToken(request.getLogin(), request.getPassword());
-            SecurityContextHolder.getContext().setAuthentication(authenticationToken);
-            UserDTO response = userService.authenticate(request.getLogin(), request.getPassword());
+            UserDTO authenticatedUser = userService.authenticate(request.getLogin(), request.getPassword());
             
-            Map<String, Object> successResponse = new HashMap<>();
-            successResponse.put("message", "Connexion réussie!");
-            successResponse.put("user", response);
+            UsernamePasswordAuthenticationToken authToken = 
+                new UsernamePasswordAuthenticationToken(request.getLogin(), request.getPassword());
+            SecurityContextHolder.getContext().setAuthentication(authToken);
+
+            Map<String, Object> response = new HashMap<>();
+            response.put("message", "Connexion réussie!");
+            response.put("user", authenticatedUser);
             
             log.info("Login successful for user: {}", request.getLogin());
-            return ResponseEntity.ok(successResponse);
+            return ResponseEntity.ok(response);
 
         } catch (AuthenticationException e) {
             log.error("Login failed for user: {}", request.getLogin());
-            Map<String, String> errorResponse = new HashMap<>();
-            errorResponse.put("message", "Login ou mot de passe incorrect");
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(errorResponse);
+            Map<String, String> response = new HashMap<>();
+            response.put("message", "Login ou mot de passe incorrect");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
         }
     }
 
@@ -73,7 +73,18 @@ public class AuthController {
         }
 
         try {
+            if (userService.existsByLogin(request.getLogin())) {
+                Map<String, String> response = new HashMap<>();
+                response.put("message", "Un utilisateur avec ce login existe déjà.");
+                return ResponseEntity.badRequest().body(response);
+            }
+
             UserDTO registeredUser = userService.register(request);
+            
+            UsernamePasswordAuthenticationToken authToken = 
+                new UsernamePasswordAuthenticationToken(request.getLogin(), request.getPassword());
+            SecurityContextHolder.getContext().setAuthentication(authToken);
+
             Map<String, Object> response = new HashMap<>();
             response.put("message", "Inscription réussie et connexion automatique effectuée!");
             response.put("user", registeredUser);
