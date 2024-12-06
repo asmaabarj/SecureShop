@@ -1,8 +1,10 @@
-package com.secureshop.controllers;
+package com.secureshop.controllers.admin;
+
 
 import com.secureshop.dtos.ProduitDTO;
 import com.secureshop.services.interfaces.ProduitService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -12,9 +14,11 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/produits")
+@Slf4j
+@RequestMapping("/api/admin/produits")
 @RequiredArgsConstructor
-public class ProduitController {
+
+public class AdminProduitController {
     private final ProduitService produitService;
 
     @GetMapping

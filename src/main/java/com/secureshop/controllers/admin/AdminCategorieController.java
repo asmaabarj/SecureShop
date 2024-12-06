@@ -1,30 +1,24 @@
-package com.secureshop.controllers;
+package com.secureshop.controllers.admin;
 
-import javax.validation.Valid;
-
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.secureshop.dtos.CategorieDTO;
 import com.secureshop.dtos.ProduitDTO;
 import com.secureshop.services.interfaces.CategorieService;
-
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/categories")
+@Slf4j
+@RequestMapping("/api/admin/categories")
 @RequiredArgsConstructor
-public class CategorieController {
+
+public class AdminCategorieController {
     private final CategorieService categorieService;
 
     @GetMapping
