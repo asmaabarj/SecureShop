@@ -109,24 +109,22 @@ Le projet est structuré en plusieurs couches :
 
 ### 🐳 **Avec Docker**
 1. Construire l'image Docker :
-   ```bash
-   docker build -t secureshop-app .
+```bash
+   docker build -t secureshop-app   
 ```
-
 
 2. Lancer les conteneurs :
-   ```bash
+```bash
 docker-compose up -d
 ```
-### 🔧 ** Manuellement **
+### 🔧 **Manuellement**
 1. Cloner le dépôt :
-
-   ```bash
+```bash
 git clone https://github.com/asmaabarj/secureshop.git
 ```
 2. Configurer la base de données dans application-dev.properties et application-prod.properties.
 3. Lancer l'application :
-   ```bash
+```bash
 mvn spring-boot:run
 ```
 ## 📚 **Usage**
