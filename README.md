@@ -121,7 +121,6 @@ docker-compose up -d
 1. Cloner le dépôt :
    ```bash
 git clone https://github.com/asmaabarj/secureshop.git
-cd secureshop
 ```
 2. Configurer la base de données dans application-dev.properties et application-prod.properties.
 3. Lancer l'application :
