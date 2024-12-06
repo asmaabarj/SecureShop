@@ -3,31 +3,30 @@ package com.secureshop.models;
 import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.*;
-import java.util.List;
+import java.util.Collection;
 
 @Entity
-@Data
+@Table(name = "users")
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @NotBlank(message = "Le login ne peut pas être vide")
+    @NotNull
+    @Size(min = 3, max = 50)
     private String login;
-
-    @NotBlank(message = "Le mot de passe ne peut pas être vide")
+    @NotNull
+    @Size(min = 6, max = 100)
     private String password;
-
-    private Boolean active;
-
-    @ManyToMany
+    private Boolean active =true;
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinTable(
-        name = "user_roles",
-        joinColumns = @JoinColumn(name = "user_id"),
-        inverseJoinColumns = @JoinColumn(name = "role_id")
+            name = "user_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
     )
-    private List<Role> roles;
+    private Collection<Role> roles;
 }
