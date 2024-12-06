@@ -20,6 +20,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.secureshop.exceptions.AuthenticationException;
+
 @Service
 @RequiredArgsConstructor
 @Transactional
@@ -86,12 +88,11 @@ public class UserServiceImpl  implements UserService {
 
     @Override
     public UserDTO authenticate(String login, String password) {
-        log.info("Attempting authentication for user: {}", login);
         User user = userRepo.findByLogin(login)
-                .orElseThrow(() -> new ValidationException("Login ou mot de passe incorrect"));
+            .orElseThrow(() -> new AuthenticationException("Login ou mot de passe incorrect"));
 
         if (!passwordEncoder.matches(password, user.getPassword())) {
-            throw new ValidationException("Login ou mot de passe incorrect");
+            throw new AuthenticationException("Login ou mot de passe incorrect");
         }
 
         return userMapper.userToUserDTO(user);
