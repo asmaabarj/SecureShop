@@ -34,13 +34,8 @@ public class AuthController {
         }
         try {
             UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(request.getLogin(), request.getPassword());
-
-
-
             SecurityContextHolder.getContext().setAuthentication(authenticationToken);
-
             UserDTO response = userService.authenticate(request.getLogin(), request.getPassword());
-
             log.info("Login successful for user: {}", request.getLogin());
             return ResponseEntity.ok(response);
 
@@ -60,13 +55,13 @@ public class AuthController {
         log.info("Register  user !! Succes");
         return ResponseEntity.ok(userService.register(request));
     }
+
+
     @PostMapping("/logout")
     public ResponseEntity<Map<String, Object>> logout() {
         SecurityContextHolder.clearContext();
-
         Map<String, Object> response = new HashMap<>();
         response.put("message", "Déconnexion réussie");
-
         return ResponseEntity.ok(response);
     }
 }

@@ -19,7 +19,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class DevSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
-
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
@@ -27,8 +26,6 @@ public class DevSecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser("admin").password(passwordEncoder().encode("123456789")).roles("ADMIN")
                 .and()
                 .withUser("user").password(passwordEncoder().encode("123456789")).roles("USER");
-
-
     }
 
     @Override
@@ -63,8 +60,5 @@ public class DevSecurityConfig extends WebSecurityConfigurerAdapter {
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
-
-
 
 }
