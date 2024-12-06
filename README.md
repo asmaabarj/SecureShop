@@ -113,12 +113,14 @@ Le projet est structuré en plusieurs couches :
    docker build -t secureshop-app .
 ```
 
+
 2. Lancer les conteneurs :
    ```bash
 docker-compose up -d
 ```
 ### 🔧 ** Manuellement **
 1. Cloner le dépôt :
+
    ```bash
 git clone https://github.com/asmaabarj/secureshop.git
 ```
