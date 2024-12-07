@@ -148,3 +148,5 @@ mvn test
 ```bash
 mvn verify
 ```
+## 📅 **Planification sur Jira avec gitFlow**
+https://asmaabarj5.atlassian.net/jira/software/projects/SEC/boards/331
