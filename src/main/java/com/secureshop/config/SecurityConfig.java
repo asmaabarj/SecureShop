@@ -1,9 +1,10 @@
 package com.secureshop.config;
 
 
+import java.util.Arrays;
+
 import javax.sql.DataSource;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +19,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import java.util.Arrays;
+import lombok.extern.slf4j.Slf4j;
 
 
 @Configuration
@@ -59,8 +60,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/api/auth/**","/h2-console/**").permitAll()
-                .antMatchers("/api/admin/**").hasRole("admin")  // Spring ajoutera automatiquement le préfixe ROLE_
-                .antMatchers("/api/user/**").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+                .antMatchers("/api/admin/**").hasRole("admin")
+                .antMatchers("/api/user/**").hasAnyRole("user", "admin")
                 .anyRequest().authenticated()
 
                 .and()
